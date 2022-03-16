@@ -58,7 +58,8 @@ if (file_exists('LookingGlass/Config.php')) {
                           echo "<a href=\"{$val}.test\" id=\"testfile\">{$val}</a> ";
                         }
                       ?></p>
-                    <p>Your IP Address: <b><a href="#tests" id="userip"><?php echo $_SERVER['REMOTE_ADDR']; ?></a></b></p>
+                    <p>Your IP Address: <b><a href="#tests" id="userip"><?php echo $_SERVER['REMOTE_ADDR']; ?></a></b>
+                    </p>
                 </div>
             </div>
         </header>
@@ -69,38 +70,42 @@ if (file_exists('LookingGlass/Config.php')) {
             <div class="card-body">
                 <form id="networktest" action="#results" method="post">
                     <fieldset>
-                      <div id="hosterror" class="form-group control-group">
-                        <div class="controls">
-                          <input id="host" name="host" type="text" class="form-control" placeholder="Host or IP address">
+                        <div id="hosterror" class="form-group control-group">
+                            <div class="controls">
+                                <input id="host" name="host" type="text" class="form-control"
+                                    placeholder="Host or IP address">
+                            </div>
                         </div>
-                      </div>
-                      <select name="cmd" class="form-control">
-                        <option value="host">host</option>
-                        <option value="mtr">mtr</option>
-                        <?php if (!empty($ipv6)) { echo '<option value="mtr6">mtr6</option>'; } ?>
-                        <option value="ping" selected="selected">ping</option>
-                        <?php if (!empty($ipv6)) { echo '<option value="ping6">ping6</option>'; } ?>
-                        <option value="traceroute">traceroute</option>
-                        <?php if (!empty($ipv6)) { echo '<option value="traceroute6">traceroute6</option>'; } ?>
-                      </select><br>
-                      <button type="submit" id="submit" name="submit" class="form-control btn btn-primary">Run Test</button>
+                        <select name="cmd" class="form-control">
+                            <option value="host">host</option>
+                            <option value="mtr">mtr</option>
+                            <?php if (!empty($ipv6)) { echo '<option value="mtr6">mtr6</option>'; } ?>
+                            <option value="ping" selected="selected">ping</option>
+                            <?php if (!empty($ipv6)) { echo '<option value="ping6">ping6</option>'; } ?>
+                            <option value="traceroute">traceroute</option>
+                            <?php if (!empty($ipv6)) { echo '<option value="traceroute6">traceroute6</option>'; } ?>
+                        </select><br>
+                        <button type="submit" id="submit" name="submit" class="form-control btn btn-primary">Run
+                            Test</button>
                     </fieldset>
-                  </form>
+                </form>
             </div>
         </div>
 
         <div id="results" class="card card-frame" style="display:none">
             <div class="card-header">
-                Results
+                <h2>
+                    Results
+                </h2>
             </div>
             <div class="card-body">
-                    <div class="span12">
-                      <div class="well">
-                          <code>
-                              <pre id="response" style="display:none"></pre>
-                          </code>
-                      </div>
+                <div class="span12">
+                    <div class="well">
+                        <code>
+                            <pre id="response" style="display:none"></pre>
+                        </code>
                     </div>
+                </div>
             </div>
         </div>
     </div>
