@@ -4,6 +4,8 @@
 
 This is a simple fork of the original telephone's LookingGlass Script which is fixed to work with php7. I also completely changed the theme to argon by CreativeTim. If you decide to use this, Please do credit or put a link back to this repository. Thanks!
 
+![img](https://i.imgur.com/9f0Y1PH.png)
+
 ## Overview
 
 LookingGlass is a user-friendly PHP based looking glass that allows the public (via a web interface) to execute network
